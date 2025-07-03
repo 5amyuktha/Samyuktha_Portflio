@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import ProfilePic from './assets/profile.jpg'; // Placeholder, user should replace with their own
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaSun, FaMoon, FaReact, FaNodeJs, FaDatabase, FaJs } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaSun, FaMoon, FaReact, FaNodeJs, FaDatabase, FaJs, FaBars, FaTimes } from 'react-icons/fa';
 
 // ProjectModal component
 function ProjectModal({ open, onClose, project }: { open: boolean, onClose: () => void, project: any }) {
@@ -238,6 +238,9 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  // Hamburger menu state
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       <div className="balls-bg parallax" ref={ballsBgRef}>
@@ -277,17 +280,26 @@ function App() {
               </button>
             </div>
           </div>
+          {/* Hamburger icon for mobile */}
+          <button
+            className="hamburger-btn"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            onClick={() => setMenuOpen((open) => !open)}
+            style={{ display: 'none' }}
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </header>
 
         {/* Navigation Bar */}
-        <nav className="navbar">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#achievements">Achievements</a>
-          <a href="#contact">Contact</a>
+        <nav className={`navbar${menuOpen ? ' open' : ''}`}>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
+          <a href="#education" onClick={() => setMenuOpen(false)}>Education</a>
+          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+          <a href="#achievements" onClick={() => setMenuOpen(false)}>Achievements</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
 
         {/* About Section */}
@@ -447,4 +459,5 @@ function App() {
 }
 
 export default App;
+
 
