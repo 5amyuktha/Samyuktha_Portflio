@@ -286,32 +286,93 @@ html {
     justify-content: flex-start;
   }
   .portfolio-container {
-    padding: 10px 2vw;
+    padding: 6px 1vw;
     margin: 0;
     min-height: 100vh;
+    border-radius: 0;
   }
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
   }
   .profile-pic {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
+  }
+  .header-content h1 {
+    font-size: 1.3rem;
+  }
+  .typewriter {
+    font-size: 1rem;
+  }
+  .contact-info {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.98rem;
   }
   .navbar {
     flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
+    gap: 8px;
+    padding: 8px 0;
     border-radius: 10px;
     top: 0;
+    font-size: 0.98rem;
+    margin: 12px 0 18px 0;
   }
   .navbar a {
-    padding: 8px 10px;
-    font-size: 1rem;
+    padding: 7px 8px;
+    font-size: 0.98rem;
   }
-  .experience-item, .education-item, .project-item {
-    padding: 12px 8px 8px 8px;
+  .section {
+    padding: 12px 4px 10px 4px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+  }
+  .timeline {
+    margin-left: 4px;
+    padding-left: 10px;
+    border-left-width: 2px;
+  }
+  .timeline-dot {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    top: 7px;
+    border-width: 2px;
+  }
+  .timeline-line {
+    left: -8px;
+    width: 2px;
+    top: 18px;
+  }
+  .project-item, .modal-content {
+    padding: 10px 6px 8px 6px;
+    font-size: 0.98rem;
+    border-radius: 8px;
+  }
+  .github-btn {
+    padding: 6px 12px 6px 10px;
+    font-size: 0.98rem;
+  }
+  .modal-content {
+    max-width: 98vw;
+    min-width: 0;
+  }
+  .modal-close {
+    top: 6px;
+    right: 10px;
+    font-size: 1.4rem;
+  }
+  .footer {
+    font-size: 0.95rem;
+    margin-top: 18px;
+    padding-top: 8px;
+  }
+  .svg-waves {
+    height: 90px;
   }
 }
 
@@ -694,3 +755,4 @@ html {
     left: -18px;
   }
 }
+
