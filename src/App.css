@@ -313,18 +313,58 @@ html {
     gap: 8px;
     font-size: 0.98rem;
   }
+  .hamburger-btn {
+    display: block !important;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 2rem;
+    z-index: 1002;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .hamburger-btn:active, .hamburger-btn:focus {
+    background: rgba(126,214,223,0.10);
+  }
   .navbar {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--navbar-bg);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    border-radius: 0 0 16px 16px;
     flex-direction: column;
-    gap: 8px;
-    padding: 8px 0;
-    border-radius: 10px;
-    top: 0;
-    font-size: 0.98rem;
-    margin: 12px 0 18px 0;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
+    z-index: 1001;
+    animation: slideDownMenu 0.25s cubic-bezier(.4,0,.2,1);
+  }
+  .navbar.open {
+    display: flex;
   }
   .navbar a {
-    padding: 7px 8px;
-    font-size: 0.98rem;
+    padding: 16px 0;
+    font-size: 1.08rem;
+    border-bottom: 1px solid rgba(126,214,223,0.10);
+    width: 100%;
+    text-align: center;
+    background: none;
+    border-radius: 0;
+  }
+  .navbar a:last-child {
+    border-bottom: none;
+  }
+  @keyframes slideDownMenu {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
   }
   .section {
     padding: 12px 4px 10px 4px;
@@ -373,6 +413,12 @@ html {
   }
   .svg-waves {
     height: 90px;
+  }
+}
+
+@media (min-width: 701px) {
+  .hamburger-btn {
+    display: none !important;
   }
 }
 
@@ -755,4 +801,5 @@ html {
     left: -18px;
   }
 }
+
 
