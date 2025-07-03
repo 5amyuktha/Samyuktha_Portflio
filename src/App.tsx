@@ -366,7 +366,7 @@ function App() {
         {/* Projects Section */}
         <section id="projects" className="section">
           <h2>Projects</h2>
-          {projects.map((project, idx) => (
+          {projects.map((project /*, idx*/) => (
             <div className="project-item" key={project.title} onClick={() => { setModalProject(project); setModalOpen(true); }} style={{ cursor: 'pointer' }}>
               <h3>{project.title} <span className="github-btn" style={{ pointerEvents: 'none', marginLeft: 8 }}><FaGithub /> GitHub</span></h3>
               <div className="project-tech">{project.tech}</div>
@@ -447,3 +447,4 @@ function App() {
 }
 
 export default App;
+
